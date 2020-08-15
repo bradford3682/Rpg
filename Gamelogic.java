@@ -383,7 +383,7 @@ anythingToContinue();
 public static void act2()
 {
             
-    act2Intro();
+  
                                                                        //          N,        S,      W,      E, 
     Room r1 = new Room(" Entrance", " Room with a underground lake inside ", Direction.NOEXIT, 2, Direction.NOEXIT, 1);
     Room r2 = new Room(" Dead end ", "empty room ", Direction.NOEXIT, Direction.NOEXIT, 0, Direction.NOEXIT);
@@ -392,8 +392,11 @@ public static void act2()
     Room r5 = new Room("Sleeping Dragon", "Don't wake him!", 2, Direction.NOEXIT, Direction.NOEXIT, 5);
     Room r6 = new Room("Exit", "We found the Crystal", 3, Direction.NOEXIT, 4, Direction.NOEXIT);
     
+      act2Intro(); // this has to be called after the Arraylist is loaded otherwise the program hangs
     
-    ArrayList<Room>  map  = new ArrayList<>();
+	
+	
+     ArrayList<Room>  map  = new ArrayList<>();
      map.add(r1);
      map.add(r2);
      map.add(r3);
@@ -402,7 +405,7 @@ public static void act2()
      map.add(r6);
 System.out.println(BLUE+"map");
 printSeperator(30);  
-System.out.println(BLUE+"* room0 -- room1 \n |  * room2 -- room3 \n  |    | room4 -- room5");
+System.out.println(BLUE+"* room0 -- room1 \n |  * room2 -- room3 \n  |    | room4 -- room5"); // this doesn't line up but its the map -- indicates room that is linked to adjacent room.
     int choice=0,dir;
     String lc="",N="";
     boolean havevisit1=false, hasvisit2=false, hasvisit0=false,hasvisit3=false,hasvisit4=false,hasVisit5=false,canGo=false;
